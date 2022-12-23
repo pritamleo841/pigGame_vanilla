@@ -21,6 +21,7 @@ const btnHold= document.querySelector('.btn--hold');
 //Initialisations
 let scores,current_score,activePlayer;
 let playing = true;
+const MAX_SCORE = 100;
 
 //Function to initialize the gameś
 const init = ()=>{
@@ -88,7 +89,7 @@ btnHold.addEventListener('click',()=>{
         document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
 
         //Player has won
-        if(scores[activePlayer] >= 20){
+        if(scores[activePlayer] >= MAX_SCORE){
             playing=false;
             diceEl.classList.add('hidden');
             document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
